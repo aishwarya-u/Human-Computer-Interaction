@@ -1,0 +1,23 @@
+package com.myyoga.rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+
+@Path("/Register")
+public class Registration {
+	@GET
+	@Path("/registerUser")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String registerUser() {
+		String response = "";
+		try{
+			DBConnection.RegisterUser(params[0], params[1]);
+		}
+	}
+
+
+}

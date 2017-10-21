@@ -1,0 +1,10 @@
+package com.myyoga.rest;
+
+import javax.ws.rs.Path;
+
+@Path("/login")
+public class Login {
+	@GET
+	@Path
+	
+}

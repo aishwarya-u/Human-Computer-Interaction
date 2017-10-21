@@ -1,0 +1,6 @@
+package com.myyoga.rest;
+
+@Path("/login")
+public class Login {
+
+}

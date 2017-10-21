@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MyYoga - Project REST API">
+        <property name="context-root" value="MyYoga_-_Project_REST_API"/>
+        <property name="java-output-path" value="/MyYoga - Project REST API/build/classes"/>
+    </wb-module>
+</project-modules>

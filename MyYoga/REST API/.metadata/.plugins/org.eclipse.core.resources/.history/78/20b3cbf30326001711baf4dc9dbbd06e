@@ -1,0 +1,5 @@
+package com.myyoga.rest;
+
+public class DBConnection {
+
+}

@@ -1,0 +1,25 @@
+package com.myyoga.rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/userlist")
+public class UserList {
+	@GET
+	@Path("/userList")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String userList() {
+		String response = "";
+		if (userList()) {
+			response = Utility.constructJSON("Login", true);
+		} else {
+			response = Utility.constructJSON("Login", false,
+					"Incorrect Email/PWD");
+		}
+		return response;
+	}
+	
+}

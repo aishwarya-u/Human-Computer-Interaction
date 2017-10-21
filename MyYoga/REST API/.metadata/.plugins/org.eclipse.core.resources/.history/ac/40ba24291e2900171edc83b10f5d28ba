@@ -1,0 +1,26 @@
+package com.myyoga.rest;
+
+import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+
+@Path("/Register")
+public class Registration {
+	@GET
+	@Path("/registerUser")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String registerUser(@QueryParam("email") String uname,
+			@QueryParam("password") String pwd) {
+		String response = "";
+		if (checkCredentials(uname, pwd)) {
+			response = Utility.constructJSON("Login", true);
+		} else {
+			response = Utility.constructJSON("Login", false,
+					"Incorrect Email/PWD");
+		}
+		return response;
+	}
+
+
+}

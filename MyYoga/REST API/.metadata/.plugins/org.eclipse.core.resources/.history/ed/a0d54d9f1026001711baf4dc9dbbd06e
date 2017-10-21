@@ -1,0 +1,38 @@
+package com.myyoga.rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+@Path("/userlist")
+public class UserList {
+	@GET
+	@Path("/userList")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String userList() {
+		String response = "";
+		if (userLists()) {
+			response = Utility.constructJSON("Login", true);
+		} else {
+			response = Utility.constructJSON("Login", false,
+					"Incorrect Email/PWD");
+		}
+		return response;
+	}
+	public boolean userLists() {
+		boolean result = false;
+			try {
+				result = DBConnection.checkLogin(params[0], params[1]);
+				// System.out.println("Inside checkCredentials try "+result);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				// System.out.println("Inside checkCredentials catch");
+				result = false;
+			}
+		} 
+
+		return result;
+	}
+}
